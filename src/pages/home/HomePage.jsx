@@ -7,9 +7,9 @@ import { FaSearch } from "react-icons/fa";
 
 function HomePage() {
     return (
-        <div style={{ backgroundColor: "#C6FFF8", minHeight: "100vh" }}>
+        <div style={{ minHeight: "100vh" }} className="home">
             {/* Thanh tìm kiếm + nút đăng ký/đăng nhập */}
-            <Container fluid className="py-2 d-flex justify-content-between align-items-center">
+            <Container fluid className="py-2 d-flex justify-content-between align-items-center" style={{ backgroundColor: "#C6FFF8" }}>
                 <InputGroup style={{ width: "300px", borderRadius: "25px", overflow: "hidden", border: "1px solid black" }}>
                     <FormControl
                         placeholder="Tìm kiếm mã đơn thuốc"
@@ -21,8 +21,8 @@ function HomePage() {
                             fontSize: "16px",
                         }}
                     />
-                    <InputGroup.Text style={{ backgroundColor: "#85F3E4", border: "none" }}>
-                        <FaSearch color="black" />
+                    <InputGroup.Text style={{ backgroundColor: "#fff", border: "none" }}>
+                        <FaSearch color="black" style={{ cursor: 'pointer' }} />
                     </InputGroup.Text>
                 </InputGroup>
 
@@ -35,6 +35,7 @@ function HomePage() {
                             marginRight: "10px",
                             fontWeight: "bold",
                         }}
+                        onClick={() => { window.location.href = "/register"; }}
                     >
                         Đăng ký
                     </Button>
@@ -45,6 +46,7 @@ function HomePage() {
                             borderRadius: "25px",
                             fontWeight: "bold",
                         }}
+                        onClick={() => { window.location.href = "/login"; }}
                     >
                         Đăng nhập
                     </Button>
@@ -56,7 +58,7 @@ function HomePage() {
                 className="text-center"
                 style={{
                     backgroundColor: "white",
-                    height: "calc(110vh - 70px)",
+                    // height: "calc(110vh - 70px)",
                     paddingTop: "40px",
                     position: "relative",
                 }}
@@ -93,11 +95,10 @@ function HomePage() {
                         src={doctorImg}
                         alt="Doctor"
                         style={{
-                            width: "100%",          // phủ khít chiều ngang
-                            height: "auto",
+                            width: "100vw",          // phủ khít chiều ngang
+                            maxHeight: "100vh",
                             display: "block",
                             margin: "0 auto",
-                            maxHeight: "60vh",      // chỉ chiếm khoảng 40% chiều cao màn hình
                             transform: "translateY(5%)", // đẩy ảnh xuống thấp hơn, tránh che logo
                             overflow: "hidden",
                         }}
