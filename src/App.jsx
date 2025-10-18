@@ -1,8 +1,18 @@
-import HomePage from "./components/HomePage";
-import LoginPage from "./components/LoginPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { publicRoutes } from "./router/index";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function App() {
-  return <HomePage />;
-  return <LoginPage />;
+function App() {
+    return (
+        <Router>
+            <Routes>
+                {publicRoutes.map((route, index) => {
+                    const Page = route.component;
+                    return <Route key={index} path={route.path} element={<Page />} />;
+                })}
+            </Routes>
+        </Router>
+    );
 }
+
+export default App;
