@@ -1,9 +1,10 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import heartImg from "../../assets/heart.png";
-import doctorImg from "../../assets/doctor.png";
 import { Container, Row, Col, Button, InputGroup, FormControl } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import doctorImg from "../../assets/doctor.png";
+import heartImg from "../../assets/heart.png";
 
 function HomePage() {
     return (
@@ -26,30 +27,9 @@ function HomePage() {
                     </InputGroup.Text>
                 </InputGroup>
 
-                <div>
-                    <Button
-                        style={{
-                            backgroundColor: "#2C488A",
-                            border: "none",
-                            borderRadius: "25px",
-                            marginRight: "10px",
-                            fontWeight: "bold",
-                        }}
-                        onClick={() => { window.location.href = "/register"; }}
-                    >
-                        Đăng ký
-                    </Button>
-                    <Button
-                        style={{
-                            backgroundColor: "#2C488A",
-                            border: "none",
-                            borderRadius: "25px",
-                            fontWeight: "bold",
-                        }}
-                        onClick={() => { window.location.href = "/login"; }}
-                    >
-                        Đăng nhập
-                    </Button>
+                <div className="d-flex gap-2">
+                    <NavLink to="/register" className="btn btn-primary">Đăng Ký</NavLink>
+                    <NavLink to="/login" className="btn btn-primary">Đăng Nhập</NavLink>
                 </div>
             </Container>
 

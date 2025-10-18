@@ -38,7 +38,7 @@
 .login-box {
     width: 80%;
     max-width: 400px;
-    text-align: center;
+    text-align: left;
     position: relative;
 }
 
@@ -51,10 +51,15 @@
     transform: translateX(-50%);
 }
 
-.login-title {
+.login-title,
+.register-title {
     font-weight: 800;
     margin-bottom: 20px;
     color: #000;
+}
+
+.register-title {
+    font-size: 27px;
 }
 
 .input-field {

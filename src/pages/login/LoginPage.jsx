@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col, Image } from "react-bootstrap";
 import "./LoginPage.css";
-import doctorImg from "../../assets/doctor.png"; // bạn thay ảnh của mình vào đây
-import medicineImg from "../../assets/heart.png";   // ảnh lọ thuốc hoặc viên thuốc
+import doctorImg from "../../assets/doctor.png"; 
+import medicineImg from "../../assets/heart.png";
 
 const LoginPage = () => {
     const [username, setUsername] = useState("");

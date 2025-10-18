@@ -3,7 +3,7 @@ const routes = {
     home: '/',
     login: '/login',
     register: '/register',
-    detail: '/detail/:id',
+    infoDoctor: '/info-doctor',
 }
 
 export default routes;
