@@ -12,7 +12,7 @@ const RegisterPage = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // toast.success("Đăng ký thành công!");
+        toast.success("Đăng ký thành công!");
         window.location.href = "/info-doctor";
     };
 
@@ -22,7 +22,7 @@ const RegisterPage = () => {
             <div className="login-left">
                 <div className="d-flex flex-column justify-content-between" style={{ height: '100%', maxHeight: '100vh' }}>
                     <div className="d-flex justify-content-end" style={{ height: '30%' }} >
-                        <Image src={Ear} alt="Doctor" className="ear-image w-50" />
+                        <Image src={Ear} alt="Doctor" className="ear-image w-25" />
                     </div>
                     <div className="left-text login-title">HỆ THỐNG QUẢN LÝ ĐƠN THUỐC ĐIỆN TỬ NỘI BỘ </div>
                     <Image src={Medi} alt="Doctor" className="doctor-image" />
@@ -68,7 +68,7 @@ const RegisterPage = () => {
                             />
                         </Form.Group>
 
-                        {/* <div className="text-center">
+                        { <div className="text-center">
                             <Button
                                 variant="primary"
                                 type="submit"
@@ -76,7 +76,7 @@ const RegisterPage = () => {
                             >
                                 ĐĂNG KÝ
                             </Button>
-                        </div> */}
+                        </div> }
                     </Form>
                 </div>
             </div>

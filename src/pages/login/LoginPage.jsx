@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col, Image } from "react-bootstrap";
 import "./LoginPage.css";
-import doctorImg from "../../assets/doctor.png"; 
-import medicineImg from "../../assets/heart.png";
+import medibgImg from "../../assets/medibg.png"; 
+import doctorloginImg from "../../assets/doclogin.png";
 
 const LoginPage = () => {
     const [username, setUsername] = useState("");
@@ -19,14 +19,22 @@ const LoginPage = () => {
             {/* Bên trái */}
             <div className="login-left">
                 <div className="doctor-wrapper">
-                    <Image src={doctorImg} alt="Doctor" className="doctor-image" />
+                    <Image src={medibgImg} alt="Doctor" className="background-image"  style={{
+                            width: "50vw",        
+                            maxHeight: "90vh",
+                            display: "block",
+                            margin: "0 auto",
+                            transform: "translateY(0%)",
+                            overflow: "hidden",
+                            transformOrigin: "center top"
+                        }} />
+                        <Image src={doctorloginImg} alt="Medicine" className="doctor-img" style={{ position: "absolute", top: 0, left: "25%", zIndex: 0, }} />
                 </div>
             </div>
 
             {/* Bên phải */}
             <div className="login-right">
                 <div className="login-box">
-                    <Image src={medicineImg} alt="Medicine" className="medicine-img" />
 
                     <h2 className="login-title">ĐĂNG NHẬP</h2>
 

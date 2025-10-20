@@ -1,0 +1,8 @@
+.ear-image {
+  position: absolute;
+  right: -60px; 
+  top: 25%;    
+  transform: translateY(-50%);
+  width: 120px; /* Điều chỉnh kích thước ảnh */
+  z-index: 2;   /* Cho ảnh nằm trên phần nền */
+}
