@@ -52,8 +52,8 @@ function AddMedicine() {
                         <Col md={4}>
                             <Form.Label>Hình thức điều trị</Form.Label>
                             <Form.Select name="htdt">
-                                <option>Điều trị tại nhà</option>
-                                <option>Điều trị tại bệnh viện</option>
+                                <option>Nội trú</option>
+                                <option>Ngoại trú</option>
                             </Form.Select>
                         </Col>
                         <Col md={4}>
@@ -136,8 +136,8 @@ function AddMedicine() {
                     </Row>
                     <Row className="mt-3">
                         <Col md={{ span: 4, offset: 8 }} className="text-end">
-                            ....., ngày .... tháng .... năm ....
-                            <span>Bác sĩ XYZ khám bệnh </span><br />
+                            <span>....., ngày .... tháng .... năm ....</span><br/>
+                            <span>Bác sĩ khám bệnh </span><br />
                             <span>(Ký/ ghi rõ họ tên)</span> <br /><br />
                             <p>Hoàng Minh Ngọc</p>
                         </Col>

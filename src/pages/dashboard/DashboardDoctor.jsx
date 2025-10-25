@@ -61,12 +61,17 @@ function DashboardDoctor() {
                         <Col md={6}>
                             <Form.Group className="mb-3" controlId="htdt">
                                 <Form.Label><strong>Hình thức điều trị</strong></Form.Label>
-                                <Form.Select value={formData.htdt}>
-                                    <option>Điều trị tại nhà</option>
-                                    <option>Điều trị tại bệnh viện</option>
+                                <Form.Select  name="htdt"
+                                value={formData.htdt}
+                                onChange={handleChange}
+                                required>
+                                    <option>Chọn hình thức điều trị</option>
+                                    <option>Nội trú</option>
+                                    <option>Ngoại trú</option>
                                 </Form.Select>
                             </Form.Group>
                         </Col>
+                    
                     </Row>
                     <Row className="">
                         <Col md={6}>

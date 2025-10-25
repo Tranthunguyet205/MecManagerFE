@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button, Badge, Alert } from "react-bootstrap
 import PopupAlert from "../../components/popup/PopupAlert";
 
 function InfoDoctorPage() {
-    //const user = { name: 'Nguyễn Văn A', avt: 'https://i.pravatar.cc/150?img=3' };
+    //const user = { name: 'Nguyễn Văn A' };
     const [showAlert, setShowAlert] = useState(false);
 
     const [formData, setFormData] = useState({
@@ -21,6 +21,7 @@ function InfoDoctorPage() {
         issueDateCchn: "",
         issuePlaceCchn: "",
         gphn: "",
+
     });
 
     const handleChange = (e) => {
@@ -39,7 +40,7 @@ function InfoDoctorPage() {
     return (
         <Container className="pt-3 rounded container-fluid" style={{ backgroundColor: "#fff" }}>
             <h4 className="text-center mb-4" style={{ backgroundColor: "#8ee3f5", padding: "10px", borderRadius: "8px" }}>
-                KHAI BÁO THÔNG TIN BÁC SĨ, {user.name}
+                KHAI BÁO THÔNG TIN BÁC SĨ
             </h4>
 
             <Form onSubmit={handleSubmit}>
@@ -313,8 +314,8 @@ function InfoDoctorPage() {
                             <Form.Label>Tài liệu chứng chỉ hành nghề<span className="text-danger">*</span></Form.Label>
                             <Form.Control
                                 type="file"
-                                name="tlcchn"
-                                value={formData.tlcchn}
+                                name="document"
+                                value={formData.document}
                                 onChange={handleChange}
                                 required
                             />
@@ -324,11 +325,11 @@ function InfoDoctorPage() {
                 <Row className="mb-3">
                     <Col md={12}>
                         <Form.Group>
-                            <Form.Label>Tài liệu giấy phép hành nghề<span className="text-danger">*</span></Form.Label>
+                            <Form.Label>Giấy phép chứng chỉ hành nghề<span className="text-danger">*</span></Form.Label>
                             <Form.Control
                                 type="file"
-                                name="tlgphn"
-                                value={formData.tlgphn}
+                                name="document_x"
+                                value={formData.document_x}
                                 onChange={handleChange}
                                 required
                             />
@@ -341,8 +342,8 @@ function InfoDoctorPage() {
                             <Form.Label>Cơ sở làm việc<span className="text-danger">*</span></Form.Label>
                             <Form.Control
                                 type="text"
-                                name="cslv"
-                                value={formData.cslv}
+                                name="document_x"
+                                value={formData.document_x}
                                 onChange={handleChange}
                                 required
                             />
