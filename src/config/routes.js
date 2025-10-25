@@ -4,6 +4,8 @@ const routes = {
     login: '/login',
     register: '/register',
     infoDoctor: '/info-doctor',
+    dashboard: '/dashboard',
+    addMedicine: '/add-medicine',
 }
 
 export default routes;
