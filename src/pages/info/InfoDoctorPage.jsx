@@ -21,6 +21,12 @@ function InfoDoctorPage() {
         issueDateCchn: "",
         issuePlaceCchn: "",
         gphn: "",
+        issueDateGphn: "",
+        issuePlaceGphn: "",
+        pvhd: "",
+        tlcchn: null,
+        tlgphn: null,
+        cslv: "",
     });
 
     const handleChange = (e) => {
@@ -313,8 +319,8 @@ function InfoDoctorPage() {
                             <Form.Label>Tài liệu chứng chỉ hành nghề<span className="text-danger">*</span></Form.Label>
                             <Form.Control
                                 type="file"
-                                name="document"
-                                value={formData.document}
+                                name="tlcchn"
+                                value={formData.tlcchn}
                                 onChange={handleChange}
                                 required
                             />
@@ -324,11 +330,11 @@ function InfoDoctorPage() {
                 <Row className="mb-3">
                     <Col md={12}>
                         <Form.Group>
-                            <Form.Label>Giấy phép chứng chỉ hành nghề<span className="text-danger">*</span></Form.Label>
+                            <Form.Label>Tài liệu giấy phép hành nghề<span className="text-danger">*</span></Form.Label>
                             <Form.Control
                                 type="file"
-                                name="document_x"
-                                value={formData.document_x}
+                                name="tlgphn"
+                                value={formData.tlgphn}
                                 onChange={handleChange}
                                 required
                             />
@@ -341,8 +347,8 @@ function InfoDoctorPage() {
                             <Form.Label>Cơ sở làm việc<span className="text-danger">*</span></Form.Label>
                             <Form.Control
                                 type="text"
-                                name="document_x"
-                                value={formData.document_x}
+                                name="cslv"
+                                value={formData.cslv}
                                 onChange={handleChange}
                                 required
                             />

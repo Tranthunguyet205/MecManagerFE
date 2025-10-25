@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { Form, Button, Row, Col, Image } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { Form, Button, Row, Col, Image, Nav } from "react-bootstrap";
 import "./LoginPage.css";
-import medibgImg from "../../assets/medibg.png"; 
+import medibgImg from "../../assets/medibg.png";
 import doctorloginImg from "../../assets/doclogin.png";
 
 const LoginPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [remember, setRemember] = useState(false);
-
+    const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
-        alert(`Tên đăng nhập: ${username}\nMật khẩu: ${password}`);
+        // alert(`Tên đăng nhập: ${username}\nMật khẩu: ${password}`);
+        navigate("/dashboard", { replace: true });
     };
 
     return (
@@ -19,15 +21,15 @@ const LoginPage = () => {
             {/* Bên trái */}
             <div className="login-left">
                 <div className="doctor-wrapper">
-                    <Image src={medibgImg} alt="Doctor" className="background-image"  style={{
-                            width: "50vw",        
-                            maxHeight: "90vh",
-                            display: "block",
-                            margin: "0 auto",
-                            transform: "translateY(0%)",
-                            overflow: "hidden",
-                            transformOrigin: "center top"
-                        }} />
+                    <Image src={medibgImg} alt="Doctor" className="background-image" style={{
+                        width: "50vw",
+                        maxHeight: "90vh",
+                        display: "block",
+                        margin: "0 auto",
+                        transform: "translateY(0%)",
+                        overflow: "hidden",
+                        transformOrigin: "center top"
+                    }} />
                     <Image src={doctorloginImg} alt="Medicine" className="doctor-img" style={{ position: "absolute", top: 0, left: "25%", zIndex: 0, }} />
                 </div>
             </div>
