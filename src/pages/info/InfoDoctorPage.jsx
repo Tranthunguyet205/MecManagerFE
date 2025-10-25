@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Badge, Alert } from "react-bootstrap";
+import PopupAlert from "../../components/popup/PopupAlert";
 
 function InfoDoctorPage() {
+    const user = { name: 'Nguyễn Văn A', avt: 'https://i.pravatar.cc/150?img=3' };
+    const [showAlert, setShowAlert] = useState(false);
+
     const [formData, setFormData] = useState({
         fullName: "",
         dob: "",
@@ -13,6 +17,10 @@ function InfoDoctorPage() {
         district: "",
         address: "",
         email: "",
+        cchn: "",
+        issueDateCchn: "",
+        issuePlaceCchn: "",
+        gphn: "",
     });
 
     const handleChange = (e) => {
@@ -31,7 +39,7 @@ function InfoDoctorPage() {
     return (
         <Container className="pt-3 rounded container-fluid" style={{ backgroundColor: "#fff" }}>
             <h4 className="text-center mb-4" style={{ backgroundColor: "#8ee3f5", padding: "10px", borderRadius: "8px" }}>
-                KHAI BÁO THÔNG TIN BÁC SĨ
+                KHAI BÁO THÔNG TIN BÁC SĨ, {user.name}
             </h4>
 
             <Form onSubmit={handleSubmit}>
@@ -178,7 +186,7 @@ function InfoDoctorPage() {
                     </Col>
                 </Row>
 
-                 <Row className="mb-3">
+                <Row className="mb-3">
                     <Col md={4}>
                         <Form.Group>
                             <Form.Label>Số CCHN <span className="text-danger">*</span></Form.Label>
@@ -219,7 +227,7 @@ function InfoDoctorPage() {
                     </Col>
                 </Row>
 
-                 <Row className="mb-3">
+                <Row className="mb-3">
                     <Col md={4}>
                         <Form.Group>
                             <Form.Label>Số GPHN <span className="text-danger">*</span></Form.Label>
@@ -277,7 +285,7 @@ function InfoDoctorPage() {
                         </Form.Group>
                     </Col>
 
-                    <Col md={4}>
+                    <Col md={8}>
                         <Form.Group>
                             <Form.Label>Phạm vi hoạt động chuyên môn <span className="text-danger">*</span></Form.Label>
                             <Form.Control
@@ -285,27 +293,93 @@ function InfoDoctorPage() {
                                 name="pvhd"
                                 value={formData.pvhd}
                                 onChange={handleChange}
-                                rows={1} 
                                 style={{ resize: "none", overflow: "hidden" }}
+                                rows={1}
                                 required
                                 onInput={(e) => {
                                     e.target.style.height = "auto";
                                     e.target.style.height = `${e.target.scrollHeight}px`;
-      }}
+                                }}
                             />
+                            <Alert variant="danger" className="mt-2 p-2" style={{ fontSize: '13px' }}>Nhập đúng thông tin trên chứng chỉ hành nghề</Alert>
                         </Form.Group>
                     </Col>
 
                 </Row>
-            
 
+                <Row className="mb-3">
+                    <Col md={12}>
+                        <Form.Group>
+                            <Form.Label>Tài liệu chứng chỉ hành nghề<span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="file"
+                                name="document"
+                                value={formData.document}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row className="mb-3">
+                    <Col md={12}>
+                        <Form.Group>
+                            <Form.Label>Giấy phép chứng chỉ hành nghề<span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="file"
+                                name="document_x"
+                                value={formData.document_x}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row className="mb-3">
+                    <Col md={12}>
+                        <Form.Group>
+                            <Form.Label>Cơ sở làm việc<span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="document_x"
+                                value={formData.document_x}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
 
-                <div className="text-center mt-4">
-                    <Button variant="primary" type="submit">
-                        Gửi thông tin
-                    </Button>
-                </div>
+                <Row className="mb-3">
+                    <Col md={12}>
+                        <Alert variant="secondary" className="p-2 text-center">
+                            TRẠNG THÁI NỘP HỒ SƠ - DUYỆT BỞI CƠ SỞ KHÁM CHỮA BỆNH
+                        </Alert>
+                    </Col>
+                </Row>
+
+                <Row className="mb-3">
+                    <Col md={12} className="text-center">
+                        <Button variant="" type="submit" className="btn-outline-primary px-4 py-2 rounded-pill fw-bold">
+                            Lưu bản nháp
+                        </Button>
+                        <Button variant="secondary" type="reset" className="px-4 py-2 rounded-pill fw-bold ms-3"
+                            onClick={() => { setShowAlert(true) }}>
+                            Gửi hồ sơ
+                        </Button>
+                    </Col>
+                </Row>
             </Form>
+
+            <PopupAlert
+                show={showAlert}
+                onClose={() => setShowAlert(false)}
+                onHide={() => setShowAlert(false)}
+                title="Đã gửi hồ sơ thành công"
+                message="Hồ sơ của bạn đã được gửi đi thành công! 
+                Hãy đăng nhập lại sau vài ngày và kiểm tra hệ thống xét duyệt bởi cơ sở khám chữa bệnh "
+                note="Lưu ý: Trong thời gian chờ xét duyệt, bạn có thể thay đổi thông tin (Bao gồm cả CCHN)"
+            />
         </Container>
     );
 }
