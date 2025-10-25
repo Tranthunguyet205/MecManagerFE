@@ -178,6 +178,128 @@ function InfoDoctorPage() {
                     </Col>
                 </Row>
 
+                 <Row className="mb-3">
+                    <Col md={4}>
+                        <Form.Group>
+                            <Form.Label>Số CCHN <span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="cchn"
+                                value={formData.cchn}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
+                    </Col>
+
+                    <Col md={4}>
+                        <Form.Group>
+                            <Form.Label>Ngày cấp <span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="date"
+                                name="issueDateCchn"
+                                value={formData.issueDateCchn}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
+                    </Col>
+
+                    <Col md={4}>
+                        <Form.Group>
+                            <Form.Label>Nơi cấp <span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="issuePlaceCchn"
+                                value={formData.issuePlaceCchn}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
+
+                 <Row className="mb-3">
+                    <Col md={4}>
+                        <Form.Group>
+                            <Form.Label>Số GPHN <span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="gphn"
+                                value={formData.gphn}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
+                    </Col>
+
+                    <Col md={4}>
+                        <Form.Group>
+                            <Form.Label>Ngày cấp <span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="date"
+                                name="issueDateGphn"
+                                value={formData.issueDateGphn}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
+                    </Col>
+
+                    <Col md={4}>
+                        <Form.Group>
+                            <Form.Label>Nơi cấp <span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="issuePlace"
+                                value={formData.issuePlaceGphn}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
+                    </Col>
+                </Row>
+
+                <Row className="mb-3">
+                    <Col md={4}>
+                        <Form.Group>
+                            <Form.Label>Văn bằng chuyên môn</Form.Label>
+                            <Form.Select
+                                name="district"
+                                value={formData.district}
+                                onChange={handleChange}
+                            >
+                                <option value="">Chọn văn bằng</option>
+                                <option value="bs">Bác sĩ</option>
+                                <option value="ly">Lương y</option>
+                                <option value="ys">Y sĩ</option>
+                            </Form.Select>
+                        </Form.Group>
+                    </Col>
+
+                    <Col md={4}>
+                        <Form.Group>
+                            <Form.Label>Phạm vi hoạt động chuyên môn <span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                name="pvhd"
+                                value={formData.pvhd}
+                                onChange={handleChange}
+                                rows={1} 
+                                style={{ resize: "none", overflow: "hidden" }}
+                                required
+                                onInput={(e) => {
+                                    e.target.style.height = "auto";
+                                    e.target.style.height = `${e.target.scrollHeight}px`;
+      }}
+                            />
+                        </Form.Group>
+                    </Col>
+
+                </Row>
+            
+
+
                 <div className="text-center mt-4">
                     <Button variant="primary" type="submit">
                         Gửi thông tin

@@ -9,7 +9,7 @@ import heartImg from "../../assets/heart.png";
 function HomePage() {
     return (
         <div style={{ minHeight: "100vh" }} className="home">
-            {/* Thanh tìm kiếm + nút đăng ký/đăng nhập */}
+            
             <Container fluid className="py-2 d-flex justify-content-between align-items-center" style={{ backgroundColor: "#C6FFF8" }}>
                 <InputGroup style={{ width: "300px", borderRadius: "25px", overflow: "hidden", border: "1px solid black" }}>
                     <FormControl
@@ -33,7 +33,7 @@ function HomePage() {
                 </div>
             </Container>
 
-            {/* Phần nội dung giữa */}
+        
             <div
                 className="text-center"
                 style={{
@@ -52,13 +52,13 @@ function HomePage() {
                     HỆ THỐNG QUẢN LÝ ĐƠN THUỐC <br /> ĐIỆN TỬ NỘI BỘ
                 </h3>
 
-                {/* Hình trái tim */}
+            
                 <img
                     src={heartImg} alt="Heart" className="heart"
                     style={{ width: "270px", marginTop: "30px" }}
                 />
 
-                {/* Ảnh bác sĩ + kim tiêm */}
+        
                 <div
                     style={{
                         position: "fixed",
@@ -75,11 +75,11 @@ function HomePage() {
                         src={doctorImg}
                         alt="Doctor"
                         style={{
-                            width: "100vw",          // phủ khít chiều ngang
+                            width: "100vw",        
                             maxHeight: "100vh",
                             display: "block",
                             margin: "0 auto",
-                            transform: "translateY(5%)", // đẩy ảnh xuống thấp hơn, tránh che logo
+                            transform: "translateY(5%)",
                             overflow: "hidden",
                         }}
                     />

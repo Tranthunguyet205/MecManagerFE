@@ -28,7 +28,7 @@ const LoginPage = () => {
                             overflow: "hidden",
                             transformOrigin: "center top"
                         }} />
-                        <Image src={doctorloginImg} alt="Medicine" className="doctor-img" style={{ position: "absolute", top: 0, left: "25%", zIndex: 0, }} />
+                    <Image src={doctorloginImg} alt="Medicine" className="doctor-img" style={{ position: "absolute", top: 0, left: "25%", zIndex: 0, }} />
                 </div>
             </div>
 
