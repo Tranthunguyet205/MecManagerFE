@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button, Badge, Alert } from "react-bootstrap
 import PopupAlert from "../../components/popup/PopupAlert";
 
 function InfoDoctorPage() {
-    const user = { name: 'Nguyễn Văn A', avt: 'https://i.pravatar.cc/150?img=3' };
+    //const user = { name: 'Nguyễn Văn A', avt: 'https://i.pravatar.cc/150?img=3' };
     const [showAlert, setShowAlert] = useState(false);
 
     const [formData, setFormData] = useState({
@@ -21,6 +21,7 @@ function InfoDoctorPage() {
         issueDateCchn: "",
         issuePlaceCchn: "",
         gphn: "",
+
     });
 
     const handleChange = (e) => {
