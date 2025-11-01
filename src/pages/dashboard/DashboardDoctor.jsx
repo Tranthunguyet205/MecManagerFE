@@ -61,17 +61,17 @@ function DashboardDoctor() {
                         <Col md={6}>
                             <Form.Group className="mb-3" controlId="htdt">
                                 <Form.Label><strong>Hình thức điều trị</strong></Form.Label>
-                                <Form.Select  name="htdt"
-                                value={formData.htdt}
-                                onChange={handleChange}
-                                required>
+                                <Form.Select name="htdt"
+                                    value={formData.htdt}
+                                    onChange={handleChange}
+                                    required>
                                     <option>Chọn hình thức điều trị</option>
                                     <option>Nội trú</option>
                                     <option>Ngoại trú</option>
                                 </Form.Select>
                             </Form.Group>
                         </Col>
-                    
+
                     </Row>
                     <Row className="">
                         <Col md={6}>
@@ -126,7 +126,7 @@ function DashboardDoctor() {
                                     <td>{row.treatmentType}</td>
                                     <td>{row.patientName}</td>
                                     <td>
-                                        <button className="btn btn-sm btn-primary">Xem</button>
+                                        <NavLink to={`/detail-medicine/${row.id}`} className="btn btn-primary btn-sm">Xem chi tiết </NavLink>
                                     </td>
                                 </tr>
                             ))}

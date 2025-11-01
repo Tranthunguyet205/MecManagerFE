@@ -1,13 +1,13 @@
 import Header from "../../components/header/Header";
 import MedicineForm from "../../components/medicine/MedicineForm";
-function AddMedicine() {
+function DetailMedicine() {
 
     return (
         <div className="d-flex flex-column">
-            <Header title={"THÊM ĐƠN THUỐC MỚI"} />
-            <MedicineForm mode="add" />
+            <Header title={"CHI TIẾT ĐƠN THUỐC"} />
+            <MedicineForm mode="detail" />
         </div>
     );
 }
 
-export default AddMedicine;
+export default DetailMedicine;
