@@ -1,9 +1,10 @@
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import Header from "../../components/header/Header";
 function AddMedicine() {
+   
     return (
         <div className="d-flex flex-column">
-            <Header title={"THÊM ĐƠN THUỐC"} />
+            <Header title={"THÊM ĐƠN THUỐC MỚI"} />
             <Container className="container mb-3">
                 <Row className="mt-3">
                     <Form.Label>Mã đơn thuốc:</Form.Label>
@@ -128,10 +129,14 @@ function AddMedicine() {
                         <Col md={3}>
                             <Form.Label>Lời dặn</Form.Label>
                             <Form.Control
-                                type="textarea"
+                                as="textarea"
                                 name="loidan"
+                                value={formData.loidan}
                                 rows={3}
+                                
                             />
+
+
                         </Col>
                     </Row>
                     <Row className="mt-3">
