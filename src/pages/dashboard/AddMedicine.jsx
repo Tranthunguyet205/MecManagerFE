@@ -131,9 +131,11 @@ function AddMedicine() {
                             <Form.Control
                                 as="textarea"
                                 name="loidan"
-                                value={formData.loidan}
-                                rows={3}
-                                
+                                onInput={(e) => {
+                                    e.target.style.height = "auto";
+                                    e.target.style.height = `${e.target.scrollHeight}px`;
+                                }}
+            
                             />
 
 
