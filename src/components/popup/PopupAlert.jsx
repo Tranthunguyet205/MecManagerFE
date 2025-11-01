@@ -9,7 +9,7 @@ function PopupAlert({ show, onClose, message, note, variant = "success", title =
             </Modal.Header>
             <Modal.Body className="text-center">
                 {message}
-                <Alert variant="danger" className="mt-3 text-center" style={{ fontSize: '12px' }}>
+                <Alert variant={variant} className="mt-3 text-center" style={{ fontSize: '12px' }}>
                     {note}
                 </Alert>
             </Modal.Body>

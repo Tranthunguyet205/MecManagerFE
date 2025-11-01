@@ -15,22 +15,24 @@ const LoginPage = () => {
         // alert(`Tên đăng nhập: ${username}\nMật khẩu: ${password}`);
         navigate("/dashboard", { replace: true });
     };
-
     return (
         <div className="login-container">
             {/* Bên trái */}
             <div className="login-left">
                 <div className="doctor-wrapper">
                     <Image src={medibgImg} alt="Doctor" className="background-image" style={{
-                        width: "50vw",
-                        maxHeight: "90vh",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        maxHeight: "100vh",
                         display: "block",
                         margin: "0 auto",
                         transform: "translateY(0%)",
                         overflow: "hidden",
                         transformOrigin: "center top"
                     }} />
-                    <Image src={doctorloginImg} alt="Medicine" className="doctor-img" style={{ position: "absolute", top: 0, left: "25%", zIndex: 0, }} />
+                    <Image src={doctorloginImg} alt="Medicine" className="doctor-img" />
                 </div>
             </div>
 
