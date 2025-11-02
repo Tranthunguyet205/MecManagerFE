@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
+import './medicine.css';
 import PopupAlert from "../popup/PopupAlert";
 function MedicineForm({ mode = "add" }) {
 

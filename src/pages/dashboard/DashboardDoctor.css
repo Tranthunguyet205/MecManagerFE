@@ -18,17 +18,6 @@
   box-shadow: none !important;           
   transform: scale(0.98);                
 }
-.btn-detail {
-  background-color: #0dcaf0; /* xanh nhạt */
-  border-color: #0dcaf0;
-  color: white;
-}
-
-.btn-detail:hover {
-  background-color: #31d2f2;
-  border-color: #25cff2;
-}
-
 .btn-primary {
     background-color: white;
     border-color: white;
