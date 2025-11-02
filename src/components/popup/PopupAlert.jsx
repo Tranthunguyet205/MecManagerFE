@@ -1,6 +1,6 @@
 import { Modal, Button, Alert } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-
+import './PopupAlert.css';
 function PopupAlert({ show, onClose, message, note, variant = "success", title = "Thông báo" }) {
     return (
         <Modal show={show} onHide={onClose} centered>
