@@ -21,7 +21,7 @@ function Header({ title }) {
                             <Dropdown.Item as={NavLink} to="/personal-doctor">Hồ sơ cá nhân</Dropdown.Item>
                             <Dropdown.Item as={NavLink} to="/change-password">Đổi mật khẩu</Dropdown.Item>
                             <Dropdown.Divider />
-                            <Dropdown.Item as={NavLink} to="/register">Đăng xuất</Dropdown.Item>
+                            <Dropdown.Item as={NavLink} to="/login">Đăng xuất</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Col>
