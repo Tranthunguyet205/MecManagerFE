@@ -8,6 +8,7 @@
   background-color: #0D1B56;
   border-color: #0D1B56;
   color: white;
+  transform: scale(1.05);
 }
 .btn-add:active,
 .btn-add:focus,
@@ -24,10 +25,11 @@
     color: black;
 }
 .btn-primary:hover {
-    background-color: white !important;
-    border-color: black !important;
-    color: black !important;
+    background-color: #0D1B56!important;
+    border-color: #0D1B56 !important;
+    color: white !important;
     box-shadow: none !important;
+    transform: scale(1.05);
 }
 
 .page-link {

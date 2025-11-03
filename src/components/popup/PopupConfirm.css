@@ -1,0 +1,23 @@
+.btn-no{
+    background-color:#0D1B56;
+    color: white;
+    border: none;
+}
+.btn-no:hover{
+    background-color: #0D1B56 !important;
+    color: white !important;
+    border: none;
+     transform: scale(1.05);
+}
+.btn-yes{
+    background-color: #0D1B56;
+    color: white;
+    border: none;
+
+}
+.btn-yes:hover{
+    background-color: #0D1B56 !important;
+    color: white !important;
+    border: none;
+     transform: scale(1.05);
+}

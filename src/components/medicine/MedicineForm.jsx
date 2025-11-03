@@ -1,14 +1,39 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import './medicine.css';
 import PopupAlert from "../popup/PopupAlert";
+import PopupConfirm from "../popup/PopupConfirm";
 function MedicineForm({ mode = "add" }) {
 
     const [showPopup, setShowPopup] = useState(false);
+    const [showConfirm, setShowConfirm] = useState(false);
+    const [popupInfo, setPopupInfo] = useState({});
+    const navigate = useNavigate();
 
     const AddMedicineHandler = () => {
+        setPopupInfo({
+            title: "Thành công",
+            message: "Đã thêm đơn thuốc thành công!",
+            note: "Vui lòng in đơn thuốc và giao cho bệnh nhân.",
+            variant: "success",
+        });
         setShowPopup(true);
     }
+    const DeletePatientHandler = () => {
+        setShowConfirm(true);
+    };
+     const confirmDelete = () => {
+        setShowConfirm(false);
+        setPopupInfo({
+            title: "Xóa thành công",
+            message: "Đơn thuốc đã được xóa khỏi danh sách!",
+            note: "Dữ liệu liên quan đến đơn thuốc này cũng đã được cập nhật.",
+            variant: "danger",
+        });
+        setShowPopup(true);
+
+    };
     return (
         <div className="d-flex flex-column">
             <Container className="container mb-3">
@@ -158,19 +183,34 @@ function MedicineForm({ mode = "add" }) {
                 <hr />
                 <div className="d-flex justify-content-between">
                     <div className="left_btn">
-                        <Button className="btn-dark">Xóa đơn thuốc</Button>
+                        <Button className="btn-dark" onClick={DeletePatientHandler}>Xóa đơn thuốc</Button>
                         {mode = "detail" ? <Button className="btn-dark ms-2" onClick={AddMedicineHandler}>Thêm đơn thuốc</Button> : <Button className="btn-dark ms-2">Thêm đơn thuốc</Button>}
                     </div>
                     {mode = "add" ? <div className="right_btn"><Button className="btn-dark">In đơn thuốc</Button></div> : null}
                 </div>
             </Container>
+            <PopupConfirm
+                show={showConfirm}
+                onClose={() => setShowConfirm(false)}
+                onConfirm={confirmDelete}
+                title="Xác nhận xóa"
+                message="Bạn có chắc chắn muốn xóa đơn thuốc này không?"
+            />
+             <PopupAlert
+                show={showPopup}
+                onClose={() => setShowPopup(false)}
+                title={popupInfo.title}
+                message={popupInfo.message}
+                note={popupInfo.note}
+                variant={popupInfo.variant}
+            />
             <PopupAlert
                 show={showPopup}
                 onClose={() => setShowPopup(false)}
-                title="Thành công"
-                message="Đã thêm đơn thuốc thành công!"
-                note="Vui lòng in đơn thuốc và giao cho bệnh nhân."
-                variant="success"
+                title={popupInfo.title}
+                message={popupInfo.message}
+                note={popupInfo.note}
+                variant={popupInfo.variant}
             />
         </div>
     );
