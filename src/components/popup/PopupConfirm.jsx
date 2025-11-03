@@ -21,7 +21,7 @@ function PopupConfirm({ show, onClose, onConfirm, title, message }) {
             </Modal.Body>
 
             <Modal.Footer className="d-flex justify-content-center gap-3">
-                <Button className="btn-no"
+                <Button className="btn-no me-3"
                     variant="secondary"
                     onClick={onClose}
                     

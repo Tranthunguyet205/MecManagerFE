@@ -2,22 +2,24 @@
     background-color:#0D1B56;
     color: white;
     border: none;
+    margin-right: 24px;
 }
 .btn-no:hover{
     background-color: #0D1B56 !important;
     color: white !important;
     border: none;
-     transform: scale(1.05);
+    transform: scale(1.05);
 }
 .btn-yes{
     background-color: #0D1B56;
     color: white;
     border: none;
+    margin-left: 24px;
 
 }
 .btn-yes:hover{
     background-color: #0D1B56 !important;
     color: white !important;
     border: none;
-     transform: scale(1.05);
+    transform: scale(1.05);
 }
