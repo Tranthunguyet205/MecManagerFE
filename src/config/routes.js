@@ -8,6 +8,9 @@ const routes = {
     dashboard: '/dashboard',
     addMedicine: '/add-medicine',
     detailMedicine: '/detail-medicine/:id',
+    dashboardAdmin: '/dashboardAdmin',
+    listDoctor: '/listDoctor',
+
 }
 
 export default routes;
