@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col, Image, Nav } from "react-bootstrap";
 import "./LoginPage.css";
 import medibgImg from "../../assets/medibg.png";
@@ -75,7 +75,7 @@ const LoginPage = () => {
                                 />
                             </Col>
                             <Col xs="auto">
-                                <a href="#" className="forgot-password">Quên Mật Khẩu?</a>
+                                <NavLink to={"/forgot-password"} className="forgot-password">Quên Mật Khẩu?</NavLink>
                             </Col>
                         </Row>
 

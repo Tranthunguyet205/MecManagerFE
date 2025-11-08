@@ -2,14 +2,14 @@ import React from "react";
 import { Container, Row, Col, Button, InputGroup, FormControl } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import doctorImg from "../../assets/doctor.png";
 import heartImg from "../../assets/heart.png";
 
 function HomePage() {
     return (
         <div style={{ minHeight: "100vh" }} className="home">
-            
+
             <Container fluid className="py-2 d-flex justify-content-between align-items-center" style={{ backgroundColor: "#C6FFF8" }}>
                 <InputGroup style={{ width: "300px", borderRadius: "25px", overflow: "hidden", border: "1px solid black" }}>
                     <FormControl
@@ -33,7 +33,7 @@ function HomePage() {
                 </div>
             </Container>
 
-        
+
             <div
                 className="text-center"
                 style={{
@@ -52,13 +52,13 @@ function HomePage() {
                     HỆ THỐNG QUẢN LÝ ĐƠN THUỐC <br /> ĐIỆN TỬ NỘI BỘ
                 </h3>
 
-            
+
                 <img
                     src={heartImg} alt="Heart" className="heart"
                     style={{ width: "270px", marginTop: "30px" }}
                 />
 
-        
+
                 <div
                     style={{
                         position: "fixed",
@@ -75,7 +75,7 @@ function HomePage() {
                         src={doctorImg}
                         alt="Doctor"
                         style={{
-                            width: "100vw",        
+                            width: "100vw",
                             maxHeight: "100vh",
                             display: "block",
                             margin: "0 auto",

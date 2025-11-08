@@ -10,6 +10,8 @@ const routes = {
     detailMedicine: '/detail-medicine/:id',
     dashboardAdmin: '/dashboardAdmin',
     listDoctor: '/listDoctor',
+    forgotPassword: '/forgot-password',
+    resetPassword: '/reset-password',
 
 }
 

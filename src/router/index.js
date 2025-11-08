@@ -8,7 +8,10 @@ import DashboardDoctorPage from '../pages/dashboard/DashboardDoctor';
 import AddMedicinePage from '../pages/dashboard/AddMedicine';
 import DetailMedicinePage from '../pages/dashboard/DetailMedicine';
 import DashboardAdmin from '../pages/dashboard/DashboardAdmin';
-import listDoctor from '../pages/list/listDoctor';
+import listDoctor from '../pages/list/ListDoctor';
+import ForgetPasswordPage from '../pages/login/ForgetpasswordPage';
+import ResetPasswordPage from '../pages/login/ResetpasswordPage';
+
 const publicRoutes = [
     { path: configRoutes.home, component: HomePage },
     { path: configRoutes.register, component: RegisterPage },
@@ -18,8 +21,10 @@ const publicRoutes = [
     { path: configRoutes.dashboard, component: DashboardDoctorPage },
     { path: configRoutes.addMedicine, component: AddMedicinePage },
     { path: configRoutes.detailMedicine, component: DetailMedicinePage },
-    {path: configRoutes.dashboardAdmin, component: DashboardAdmin},
-    {path: configRoutes.listDoctor, component: listDoctor}
+    { path: configRoutes.dashboardAdmin, component: DashboardAdmin },
+    { path: configRoutes.listDoctor, component: listDoctor },
+    { path: configRoutes.forgotPassword, component: ForgetPasswordPage },
+    { path: configRoutes.resetPassword, component: ResetPasswordPage },
 ]
 
 export { publicRoutes };
