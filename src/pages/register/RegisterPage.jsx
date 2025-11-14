@@ -1,20 +1,60 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col, Image } from "react-bootstrap";
 import "./Register.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Ear from "../../assets/ear.png";
 import Medi from "../../assets/medi.png";
 
 const RegisterPage = () => {
+    const [fullName, setFullName] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [gender, setGender] = useState(1);
     const [repassword, setRepassword] = useState("");
 
-    const handleLogin = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
-        toast.success("Đăng ký thành công!");
-        window.location.href = "/info-doctor";
+
+        // ✅ Optional: kiểm tra password trùng nhau trước khi gửi API
+        if (password !== repassword) {
+            alert("Mật khẩu nhập lại không khớp!");
+            return;
+        }
+
+        try {
+            const response = await axios.post(
+                "http://localhost:8080/apiMecManager/user/register",
+                {
+                    username: username,
+                    fullName: "",   
+                    gender: null,
+                    passwordHash: password, // backend yêu cầu field passwordHash
+                    role: {
+                        id: 1,
+                        name: "DOCTOR",
+                    },
+                    createdUserId: 1,
+                },
+                {
+                    headers: { "Content-Type": "application/json" },
+                    withCredentials: true, // ✅ gửi cookie nếu backend dùng session
+                }
+            );
+
+            console.log("✅ Register success:", response.data);
+            
+            alert("Đăng ký thành công!");
+            navigate("/dashboard"); 
+            //console.error("❌ Register failed:", error);
+            alert("Đăng ký thất bại! Vui lòng kiểm tra lại thông tin.");
+            console.error("❌ Register failed:", error.response ? error.response.data : error);
+
+        }
     };
+
+
 
     return (
         <div className="login-container">
@@ -34,7 +74,7 @@ const RegisterPage = () => {
                 <div className="login-box">
                     <h2 className="register-title">ĐĂNG KÝ TÀI KHOẢN BÁC SĨ</h2>
 
-                    <Form onSubmit={handleLogin}>
+                    <Form onSubmit={handleRegister}>
                         <Form.Group className="mb-3" controlId="username">
                             <Form.Label><strong>Tên Đăng Nhập:</strong></Form.Label>
                             <Form.Control
@@ -43,6 +83,7 @@ const RegisterPage = () => {
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 className="input-field"
+                                required 
                             />
                         </Form.Group>
 
@@ -54,6 +95,7 @@ const RegisterPage = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 className="input-field"
+                                 required
                             />
                         </Form.Group>
 
@@ -65,10 +107,11 @@ const RegisterPage = () => {
                                 value={repassword}
                                 onChange={(e) => setRepassword(e.target.value)}
                                 className="input-field"
+                                 required
                             />
                         </Form.Group>
 
-                        { <div className="text-center">
+                        <div className="text-center">
                             <Button
                                 variant="primary"
                                 type="submit"
@@ -76,12 +119,12 @@ const RegisterPage = () => {
                             >
                                 ĐĂNG KÝ
                             </Button>
-                        </div> }
+                        </div> 
                     </Form>
                 </div>
             </div>
         </div>
     );
-};
+}
 
 export default RegisterPage;

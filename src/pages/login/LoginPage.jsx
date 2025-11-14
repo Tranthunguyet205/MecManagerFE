@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios"; 
 import { Form, Button, Row, Col, Image, Nav } from "react-bootstrap";
 import "./LoginPage.css";
 import medibgImg from "../../assets/medibg.png";
@@ -10,10 +11,39 @@ const LoginPage = () => {
     const [password, setPassword] = useState("");
     const [remember, setRemember] = useState(false);
     const navigate = useNavigate();
-    const handleLogin = (e) => {
-        e.preventDefault();
-        // alert(`Tên đăng nhập: ${username}\nMật khẩu: ${password}`);
-        navigate("/dashboard", { replace: true });
+    const handleLogin = async (e) => {
+  e.preventDefault();
+
+  try {
+    // 🧩 Gọi API
+    const response = await axios.post(
+      "http://localhost:8080/apiMecManager/user/login",
+      {
+        username: username,
+        password: password,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true, // ⚠️ để gửi cookie JSESSIONID nếu backend dùng session
+      }
+    );
+
+    console.log("✅ Login success:", response.data);
+
+    // 🔑 (Tuỳ chọn) lưu token hoặc user info backend trả về
+    if (response.data.token) {
+      localStorage.setItem("token", response.data.token);
+    }
+
+    // ✅ Điều hướng khi đăng nhập thành công
+    navigate("/dashboard", { replace: true });
+  } catch (error) {
+    console.error("❌ Login failed:", error);
+    alert("Đăng nhập thất bại! Vui lòng kiểm tra lại tài khoản hoặc mật khẩu.");
+  }
+
     };
     return (
         <div className="login-container">
@@ -93,6 +123,6 @@ const LoginPage = () => {
             </div>
         </div>
     );
-};
+}
 
 export default LoginPage;

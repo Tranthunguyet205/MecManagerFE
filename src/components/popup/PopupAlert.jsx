@@ -14,7 +14,7 @@ function PopupAlert({ show, onClose, message, note, variant = "success", title =
                 </Alert>
             </Modal.Body>
             <Modal.Footer>
-                <NavLink to={"/dashboard"}>
+                <NavLink to={"/login"}>
                     <Button variant="primary">
                         Trở về trang chính
                     </Button>
