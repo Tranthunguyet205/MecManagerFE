@@ -20,8 +20,8 @@ function PopupConfirm({ show, onClose, onConfirm, title, message }) {
                 <p>{message || "Bạn có chắc chắn muốn thực hiện thao tác này?"}</p>
             </Modal.Body>
 
-            <Modal.Footer className="d-flex justify-content-center gap-3">
-                <Button className="btn-no me-3"
+            <Modal.Footer className="d-flex justify-content-center">
+                <Button className="btn-no"
                     variant="secondary"
                     onClick={onClose}
                     

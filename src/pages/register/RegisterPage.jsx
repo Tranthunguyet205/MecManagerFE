@@ -8,6 +8,7 @@ import Ear from "../../assets/ear.png";
 import Medi from "../../assets/medi.png";
 
 const RegisterPage = () => {
+    const navigate = useNavigate();
     const [fullName, setFullName] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -30,7 +31,7 @@ const RegisterPage = () => {
                     username: username,
                     fullName: "",   
                     gender: null,
-                    passwordHash: password, // backend yêu cầu field passwordHash
+                    passwordHash: password,
                     role: {
                         id: 1,
                         name: "DOCTOR",
@@ -46,12 +47,14 @@ const RegisterPage = () => {
             console.log("✅ Register success:", response.data);
             
             alert("Đăng ký thành công!");
-            navigate("/dashboard"); 
+            navigate("/login"); 
             //console.error("❌ Register failed:", error);
+           
+
+        } catch (error) {
             alert("Đăng ký thất bại! Vui lòng kiểm tra lại thông tin.");
             console.error("❌ Register failed:", error.response ? error.response.data : error);
-
-        }
+           }
     };
 
 

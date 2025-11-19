@@ -1,13 +1,13 @@
 .btn-add {
-  background-color: #0D1B56; 
-  border-color: #0D1B56;
-  color: white;
+  background-color: #0D1B56 !important; 
+  border-color: #0D1B56 !important;
+  color: white !important;
 }
 
 .btn-add:hover {
   background-color: #0D1B56;
   border-color: #0D1B56;
-  color: white;
+  color: white !important;
   transform: scale(1.05);
 }
 .btn-add:active,

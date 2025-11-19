@@ -12,6 +12,7 @@ const routes = {
     listDoctor: '/listDoctor',
     forgotPassword: '/forgot-password',
     resetPassword: '/reset-password',
+    prescriptionModal: '/prescription-modal',
 
 }
 
