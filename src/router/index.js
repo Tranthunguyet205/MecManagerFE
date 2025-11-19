@@ -12,6 +12,7 @@ import listDoctor from '../pages/list/ListDoctor';
 import ForgetPasswordPage from '../pages/login/ForgetpasswordPage';
 import ResetPasswordPage from '../pages/login/ResetpasswordPage';
 
+
 const publicRoutes = [
     { path: configRoutes.home, component: HomePage },
     { path: configRoutes.register, component: RegisterPage },
