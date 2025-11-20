@@ -106,6 +106,7 @@ function DashboardDoctor() {
             <Container className="container mt-4">
                 <div className="d-flex justify-content-between">
                     <h5 className="flex-grow-1">Danh sách đơn thuốc: 20</h5>
+                    <NavLink to={"/add-medicine"} className="btn btn-search">Tìm kiếm</NavLink>
                     <NavLink to={"/add-medicine"} className="btn btn-add">Thêm đơn thuốc</NavLink>
                 </div>
                 <div className="table-responsive mt-3">

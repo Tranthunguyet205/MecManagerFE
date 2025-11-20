@@ -1,0 +1,23 @@
+.btn-searchDoctor {
+  background-color: #0D1B56 !important; 
+  border-color: #0D1B56 !important;
+  color: white !important;
+  transition: all 0.2s ease; 
+}
+.btn-searchDoctor:hover {
+  background-color: #0D1B56; 
+  border-color: #0D1B56;
+  color: white !important;
+
+  transform: scale(1.05);
+}
+
+.btn-searchDoctor:active,
+.btn-searchDoctor:focus,
+.btn-searchDoctor:focus-visible {
+  background-color: #0D1B56 !important; 
+  border-color: #0D1B56 !important;
+  color: white !important;
+  box-shadow: none !important; 
+  transform: scale(0.98) !important; 
+}

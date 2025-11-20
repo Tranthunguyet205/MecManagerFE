@@ -1,5 +1,6 @@
 import { Table,Container, Pagination, Form, Button } from "react-bootstrap";
 import {useState} from "react"
+import './ListDoctor.css';
 function ListDoctor() {
     const [search, setSearch] = useState("")
     const doctors = [
@@ -18,7 +19,7 @@ function ListDoctor() {
                         onChange={(e) => setSearch(e.target.value)}
                         className="input-field  w-75"
                     />
-                    <Button className="bn-sm">Tìm kiem</Button>
+                    <Button className="bn-sm">Tìm kiếm</Button>
                     </div>
                 </Form>
                 <div className="table-responsive mt-3">
@@ -40,7 +41,7 @@ function ListDoctor() {
                                     <td>{row.sdt}</td>
                                     <td>{row.email}</td>
                                     <td>
-                                        <button className="btn btn-outline-dark btn-sm">Xem chi tiết</button>
+                                        <button className="btn btn-searchDoctor">Xem chi tiết</button>
                                     </td>
                                     
                                 </tr>

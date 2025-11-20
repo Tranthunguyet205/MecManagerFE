@@ -123,7 +123,6 @@ function DashboardAdmin() {
         </div>
       </Container>
 
-      {/* ===== NỘI DUNG CHÍNH ===== */}
       <div
         className="text-center"
         style={{
@@ -132,7 +131,7 @@ function DashboardAdmin() {
           zIndex: 1,
         }}
       >
-        {/* Tiêu đề */}
+ 
         <h3
           style={{
             fontWeight: "bold",
